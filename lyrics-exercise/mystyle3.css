@@ -1,0 +1,28 @@
+div.layout{
+    display: flex;
+    flex-direction: row;
+    background-color: brown;
+    margin-left: 0px;
+}
+div.song, img{
+    margin: 30px;
+    padding: 10px;
+}
+img {
+    height: 400px;
+}
+body{
+    background-color: black;
+    font-family: futura-pt, sans-serif;
+}
+h1, h2{
+    margin: 30px;
+    padding: 10px;
+    font-weight: 800;
+    color: red;
+}
+@media screen and (max-width: 700px) {
+    div.layout{
+        flex-direction: column;
+    }
+}
