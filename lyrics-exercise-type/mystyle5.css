@@ -1,0 +1,54 @@
+div.sidecolumn{
+    margin: 0px;
+    padding: 0px;
+    width: 33%;
+}
+div.column{
+    margin: 0px;
+    padding: 0px;
+    width: 500px;
+}
+div.layout {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+div, img{
+    margin: 30px;
+    padding: 10px;
+}
+div.song{
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+img{
+    width: 400px;
+}
+body{
+    background-color: red;
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+h1, h2{
+    margin: 30px;
+    font-weight: 800;
+    color: red;
+}
+div.chorus{
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+@media screen and (max-width: 700px) {
+    img {
+        width: 200px;
+    }
+    div.column{ 
+        width: 200px;
+    }
+}
