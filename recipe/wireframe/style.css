@@ -1,0 +1,36 @@
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 960px;
+}
+#description, #content, #pictures{
+    display: flex;
+}
+#description>img{
+    object-fit: cover;
+    float: right;
+}
+#content>*, #description>*{
+    width: 50%;
+}
+#pictures{
+    margin-top: 10px;
+    width: 80%;
+}
+#pictures>img{
+    object-fit: cover;
+    width: 33%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+@media (max-width: 640px){
+    #description,#content,#pictures{
+        flex-direction: column;
+    }
+    #description>*,#pictures>img,#pictures,#content>*{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
