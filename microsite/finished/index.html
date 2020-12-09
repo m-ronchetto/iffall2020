@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href=style.css>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="landing">
+            <h1>
+                <a href = #dynamic-navigate>KODAK </a>
+            </h1>
+        </div>
+        <header id = dynamic-navigate>
+            <h2>
+                Kodak
+            </h2>
+            <nav>
+                <ul>
+                    <li id ="selected">
+                        <a href= index.html>Home</a>
+                    </li>
+                    <li>
+                        <a href= history.html>History</a>
+                    </li>
+                    <li>
+                        <a href= products.html>Products</a>
+                    </li>
+                    <li>
+                        <a href=people.html>People</a>
+                    </li>
+                    <li>
+                        <a href=future.html>Future</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id= home>
+            <h3>
+                Home
+            </h3>
+            <div id = flexor>
+                <div id = text>
+                    <p>
+                        The Eastman Kodak Company (referred to simply as Kodak /ˈkoʊdæk/) is an American public company that 
+                        produces various products related to its historic basis in analogue photography. The company is headquartered 
+                        in Rochester, New York, and is incorporated in New Jersey. Kodak provides packaging, functional printing,
+                        graphic communications, and professional services for businesses around the world. Its main business segments 
+                        are Print Systems, Enterprise Inkjet Systems, Micro 3D Printing and Packaging, Software and Solutions, and Consumer 
+                        and Film. It is best known for photographic film products.
+                    </p>
+                    <p>
+                        Kodak was founded by George Eastman and Henry A. Strong on September 4, 1888. During most of the 20th century, Kodak 
+                        held a dominant position in photographic film. The company's ubiquity was such that its "Kodak moment" tagline entered 
+                        the common lexicon to describe a personal event that deserved to be recorded for posterity. Kodak began to struggle
+                        financially in the late 1990s, as a result of the decline in sales of photographic film and its slowness in moving 
+                        to digital photography, despite developing the first self-contained digital camera. As a part of a turnaround 
+                        strategy, Kodak began to focus on digital photography and digital printing, and attempted to generate revenues 
+                        through aggressive patent litigation.
+                    </p>
+                </div>
+                <img id = logo alt = "Kodak logo" src = logo.png> 
+            </div>
+        </main>
+        <div class = footer>
+            <p>
+                Content and Images from <a>https://en.wikipedia.org/wiki/Kodak</a>
+            </p>
+        </div>
+    </body>
+    <script>
+        window.onload = function(e){
+            const navs = document.getElementsByTagName("li");
+            for ( var i = 0; i< navs.length; i++){
+                console.log(navs[i]);
+                navs[i].addEventListener('mouseover', updateNav);
+                navs[i].addEventListener("mouseleave", resetNav);
+            }
+            document.getElementById("landing").style.backgroundColor ="rgb(255,183,0)"; 
+            document.getElementById("dynamic-navigate").style.backgroundColor ="rgb(255,183,0)";
+        };
+        window.addEventListener("scroll", gradient);
+        function getScrollPercent() {
+            var h = document.documentElement, 
+            b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight';
+            return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
+        }
+        function gradient(){
+            const movement = document.body.scrollTop;
+            const initR = 255;
+            const initG = 183;
+            const finR = 237;
+            const finG = 0;
+            const scrollPct = getScrollPercent();
+            const curR = parseInt(initR + (scrollPct * (finR-initR)));
+            const curG = parseInt(initG + (scrollPct * (finG-initG)));
+            document.getElementById("landing").style.backgroundColor ="rgb(" + curR + "," + curG + ",0)"; 
+            document.getElementById("dynamic-navigate").style.backgroundColor ="rgb(" + curR + "," + curG + ",0)"; 
+        }
+        function updateNav(){
+            document.getElementById("selected").style.fontWeight = "normal";
+            document.getElementById("selected").style.borderBottom = "none";
+        }
+        function resetNav(){
+            document.getElementById("selected").style.fontWeight = "bold";
+            document.getElementById("selected").style.borderBottom = "2px solid #272727";
+        }
+    </script>
+</html>
